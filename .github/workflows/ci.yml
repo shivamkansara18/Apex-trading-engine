@@ -1,0 +1,47 @@
+name: C++ build and tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      matrix:
+        preset: [debug, asan, benchmark]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y cmake ninja-build g++
+      - name: Configure
+        run: cmake --preset ${{ matrix.preset }}
+      - name: Build
+        run: cmake --build --preset ${{ matrix.preset }} --parallel 2
+      - name: Test
+        run: ctest --preset ${{ matrix.preset }} --output-junit "${{ github.workspace }}/build/${{ matrix.preset }}/ctest-results.xml"
+      - name: Test release packaging
+        if: matrix.preset == 'debug'
+        run: python3 -m unittest discover -s tests -p package_release_test.py -v
+      - name: Test portable portfolio evidence
+        if: matrix.preset == 'debug'
+        run: python3 -m unittest discover -s tests -p portfolio_evidence_test.py -v
+      - name: Retain native test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-test-reports-${{ matrix.preset }}
+          path: |
+            build/${{ matrix.preset }}/ctest-results.xml
+            build/${{ matrix.preset }}/Testing/Temporary/LastTest.log
+      - uses: actions/setup-node@v4
+        if: matrix.preset == 'debug'
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: ui/package-lock.json
+      - name: Build and test local dashboard
+        if: matrix.preset == 'debug'
+        run: |
+          npm ci --prefix ui
+          npm --prefix ui run build
+          npm --prefix ui test

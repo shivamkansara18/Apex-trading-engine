@@ -1,0 +1,14 @@
+/build*/
+/.venv/
+/tmp/
+/.DS_Store
+__pycache__/
+*.pyc
+/results/raw/*
+/results/figures/*
+!**/.gitkeep
+/ui/node_modules/
+/ui/dist/
+
+# Local implementation reference, excluded from source releases.
+/Apex_Trading_Engine_Implementation_Guide.pdf

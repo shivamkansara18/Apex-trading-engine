@@ -1,0 +1,3308 @@
+{
+  "schema_version": 1,
+  "scope": "Historical synchronous engine calls; excludes network, queueing, journal and UI",
+  "build": {
+    "type": "Release",
+    "compiler": "AppleClang 21.0.0.21000101",
+    "compiler_path": "/usr/bin/c++",
+    "flags": " -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wshadow",
+    "sanitized": false,
+    "git_commit": "uncommitted",
+    "git_dirty": true,
+    "source_sha256": "9f681f4cfd6598d308be224a735dc50a40f3a06e3144d6948877d8390d4fa9df"
+  },
+  "machine": {
+    "os": "Darwin",
+    "kernel": "27.2.0",
+    "architecture": "arm64",
+    "cpu": "Apple M5",
+    "ram_bytes": 17179869184,
+    "logical_cpus": 10
+  },
+  "bundles": 75,
+  "raw_samples_audited": 7500000,
+  "method": "One full warm-up plus one fresh-book measurement per bundle; 5+ interleaved paired blocks per policy/workload; no profiler attached",
+  "experiment_sha256": "4348617115ecb917fd0d9e74b6fa2bb7a0c56120f93c68944dd40883f63d4f80",
+  "measured_source_zip_sha256": "ccdd2738fc66e5fcfe6d9559a0e1887259bcf721fcae249790d37f57ec1fcbd1",
+  "groups": [
+    {
+      "profile": "balanced",
+      "policy": "baseline",
+      "blocks": 5,
+      "median_throughput_ops_s": 4727378.018874057,
+      "paired_ratios": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "median_paired_ratio": 1.0,
+      "p50_ns": 167,
+      "p95_ns": 458,
+      "p99_ns": 584,
+      "p999_ns": 791
+    },
+    {
+      "profile": "balanced",
+      "policy": "direct-risk",
+      "blocks": 5,
+      "median_throughput_ops_s": 10385519.843560837,
+      "paired_ratios": [
+        2.219952774498229,
+        2.187905754394182,
+        2.187364868976383,
+        2.142398562810222,
+        2.309117274959823
+      ],
+      "median_paired_ratio": 2.187905754394182,
+      "p50_ns": 83,
+      "p95_ns": 167,
+      "p99_ns": 250,
+      "p999_ns": 292
+    },
+    {
+      "profile": "balanced",
+      "policy": "flat-prices",
+      "blocks": 5,
+      "median_throughput_ops_s": 4869576.430120337,
+      "paired_ratios": [
+        1.0401253202669198,
+        1.0319205728767173,
+        0.9834903790053452,
+        1.0045307026063484,
+        1.0882532917490868
+      ],
+      "median_paired_ratio": 1.0319205728767173,
+      "p50_ns": 167,
+      "p95_ns": 417,
+      "p99_ns": 542,
+      "p999_ns": 709
+    },
+    {
+      "profile": "balanced",
+      "policy": "small-events",
+      "blocks": 5,
+      "median_throughput_ops_s": 4724772.102979999,
+      "paired_ratios": [
+        1.011832727446666,
+        1.0109975934543187,
+        0.9986230891201477,
+        0.9746594407892033,
+        1.041354031313407
+      ],
+      "median_paired_ratio": 1.0109975934543187,
+      "p50_ns": 167,
+      "p95_ns": 458,
+      "p99_ns": 584,
+      "p999_ns": 791
+    },
+    {
+      "profile": "balanced",
+      "policy": "direct-flat",
+      "blocks": 5,
+      "median_throughput_ops_s": 11189488.50498251,
+      "paired_ratios": [
+        2.420502331435764,
+        2.3570358239058815,
+        2.361474614422676,
+        2.2751415021506562,
+        2.508552853381111
+      ],
+      "median_paired_ratio": 2.361474614422676,
+      "p50_ns": 83,
+      "p95_ns": 167,
+      "p99_ns": 209,
+      "p999_ns": 292
+    },
+    {
+      "profile": "many-levels",
+      "policy": "baseline",
+      "blocks": 5,
+      "median_throughput_ops_s": 4757505.881347708,
+      "paired_ratios": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "median_paired_ratio": 1.0,
+      "p50_ns": 167,
+      "p95_ns": 458,
+      "p99_ns": 583,
+      "p999_ns": 750
+    },
+    {
+      "profile": "many-levels",
+      "policy": "direct-risk",
+      "blocks": 5,
+      "median_throughput_ops_s": 10175269.008674417,
+      "paired_ratios": [
+        2.141251729528301,
+        2.0829524814305613,
+        2.2723603969531214,
+        2.128497515325243,
+        2.1387822238050416
+      ],
+      "median_paired_ratio": 2.1387822238050416,
+      "p50_ns": 83,
+      "p95_ns": 167,
+      "p99_ns": 250,
+      "p999_ns": 333
+    },
+    {
+      "profile": "many-levels",
+      "policy": "flat-prices",
+      "blocks": 5,
+      "median_throughput_ops_s": 4996668.720963733,
+      "paired_ratios": [
+        1.0273295116866694,
+        1.0400711845412662,
+        1.0442610339442755,
+        1.06681239834606,
+        1.0570644034601866
+      ],
+      "median_paired_ratio": 1.0442610339442755,
+      "p50_ns": 167,
+      "p95_ns": 417,
+      "p99_ns": 542,
+      "p999_ns": 708
+    },
+    {
+      "profile": "many-levels",
+      "policy": "small-events",
+      "blocks": 5,
+      "median_throughput_ops_s": 4716063.501795052,
+      "paired_ratios": [
+        0.9923785290917846,
+        0.9826065734348263,
+        1.047156516568845,
+        0.9894264845834527,
+        0.9912890534271044
+      ],
+      "median_paired_ratio": 0.9912890534271044,
+      "p50_ns": 167,
+      "p95_ns": 458,
+      "p99_ns": 584,
+      "p999_ns": 750
+    },
+    {
+      "profile": "many-levels",
+      "policy": "direct-flat",
+      "blocks": 5,
+      "median_throughput_ops_s": 11123470.522803115,
+      "paired_ratios": [
+        2.1542859355238364,
+        2.315382869855395,
+        2.0223982482412555,
+        2.3945345616910645,
+        2.338424461176794
+      ],
+      "median_paired_ratio": 2.315382869855395,
+      "p50_ns": 83,
+      "p95_ns": 167,
+      "p99_ns": 209,
+      "p999_ns": 292
+    },
+    {
+      "profile": "large-partial",
+      "policy": "baseline",
+      "blocks": 5,
+      "median_throughput_ops_s": 4993165.6045787325,
+      "paired_ratios": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "median_paired_ratio": 1.0,
+      "p50_ns": 167,
+      "p95_ns": 750,
+      "p99_ns": 833,
+      "p999_ns": 875
+    },
+    {
+      "profile": "large-partial",
+      "policy": "direct-risk",
+      "blocks": 5,
+      "median_throughput_ops_s": 9655072.53373241,
+      "paired_ratios": [
+        2.0086304752852726,
+        1.9459637452026362,
+        1.8809090141490656,
+        1.9174510050033553,
+        1.9530486922592594
+      ],
+      "median_paired_ratio": 1.9459637452026362,
+      "p50_ns": 42,
+      "p95_ns": 625,
+      "p99_ns": 708,
+      "p999_ns": 792
+    },
+    {
+      "profile": "large-partial",
+      "policy": "flat-prices",
+      "blocks": 5,
+      "median_throughput_ops_s": 4909280.666177604,
+      "paired_ratios": [
+        0.35549448379292603,
+        0.7131246234437266,
+        0.9886760631249246,
+        1.0053187983565626,
+        0.9767320715401979
+      ],
+      "median_paired_ratio": 0.9767320715401979,
+      "p50_ns": 167,
+      "p95_ns": 750,
+      "p99_ns": 833,
+      "p999_ns": 875
+    },
+    {
+      "profile": "large-partial",
+      "policy": "small-events",
+      "blocks": 5,
+      "median_throughput_ops_s": 4849552.808186899,
+      "paired_ratios": [
+        0.9639691764161312,
+        0.9860244612411635,
+        0.9524894478685,
+        0.9565541863686297,
+        0.9648488408938347
+      ],
+      "median_paired_ratio": 0.9639691764161312,
+      "p50_ns": 167,
+      "p95_ns": 875,
+      "p99_ns": 917,
+      "p999_ns": 1000
+    },
+    {
+      "profile": "large-partial",
+      "policy": "direct-flat",
+      "blocks": 5,
+      "median_throughput_ops_s": 9975642.473771792,
+      "paired_ratios": [
+        1.9986582908565451,
+        2.0105740812657737,
+        1.964394810237544,
+        2.0286021777665235,
+        1.9511253309796996
+      ],
+      "median_paired_ratio": 1.9986582908565451,
+      "p50_ns": 42,
+      "p95_ns": 625,
+      "p99_ns": 667,
+      "p999_ns": 750
+    }
+  ],
+  "records": [
+    {
+      "profile": "balanced",
+      "block": 1,
+      "policy": "small-events",
+      "bundle": "balanced-1-small-events",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 20906000,
+        "throughput_ops_s": 4783315.794508753,
+        "accepted_ops_s": 4783315.794508753,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 583,
+        "p999_ns": 750,
+        "max_ns": 6708,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10911744,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "0d414ef562fad0798f5bce37643fcf41522ff77ca8abf590f38382ac7e1a8bfa",
+        "runs.csv": "e8cdf8128b71c2164cd901b44efa2dfe681e2af0070c1b6502e4bea313d3bed2",
+        "samples.csv": "11ab9ac226b391117eb08d6223a3039c97604842ff0e212b8574f6486888db94"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 1,
+      "policy": "direct-risk",
+      "bundle": "balanced-1-direct-risk",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 9528750,
+        "throughput_ops_s": 10494555.949101403,
+        "accepted_ops_s": 10494555.949101403,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 209,
+        "p999_ns": 292,
+        "max_ns": 625,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10895360,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "d582bd7dcf8027a1936adf1b76265a9f93cbe8eb81643f4d63db60dabbf1cbb2",
+        "runs.csv": "dafb1cc45dc2d8375292aaaba5b4549f17ab57c2607c8eb00bfd67d0c09e21e5",
+        "samples.csv": "018a3507cef8096b02cbeead696ebf8b36c0c5fd3594f33bcb89c2d81f79b419"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 1,
+      "policy": "flat-prices",
+      "bundle": "balanced-1-flat-prices",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 20337333,
+        "throughput_ops_s": 4917065.575904176,
+        "accepted_ops_s": 4917065.575904176,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 417,
+        "p99_ns": 542,
+        "p999_ns": 708,
+        "max_ns": 13917,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 11010048,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "16ecfbe885864b1b4f5c201b030aaee8b1f169b31e7379e851a100c66e0f16ef",
+        "runs.csv": "cb19a6835358dc5ef39924dc0e505f7056ff0df5bf4cbdf9071970f5039b42ef",
+        "samples.csv": "eeaf244baf65b44b94e2fe1a3ce62e29bda5afd5f6ddfdeed7c588da0ddd92d6"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 1,
+      "policy": "direct-flat",
+      "bundle": "balanced-1-direct-flat",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 8739250,
+        "throughput_ops_s": 11442629.516262837,
+        "accepted_ops_s": 11442629.516262837,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 208,
+        "p999_ns": 292,
+        "max_ns": 6291,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10911744,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "84f18e71afef98195ac314fbc3444a8247b8cfa63f3e2e9a9b4ec012c52b7261",
+        "runs.csv": "8ab9e74fb1fe519e690d2fd8c34662c76cb82eb7fdd7e3750958ff73332fff9d",
+        "samples.csv": "4674b7e2470b9ee7e0850026c793371c24dd59c25553aad40568bfb750888bfc"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 1,
+      "policy": "baseline",
+      "bundle": "balanced-1-baseline",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 21153375,
+        "throughput_ops_s": 4727378.018874057,
+        "accepted_ops_s": 4727378.018874057,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 583,
+        "p999_ns": 750,
+        "max_ns": 2250,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10911744,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "e45ebae9cad4d9891d0ce85ef621f4a403171c0ed82b37218ec0820120a6d03c",
+        "runs.csv": "575920b156ed93ff5402fef6f07357ee01066e5fb9bf7aa1976c9cff010c2a36",
+        "samples.csv": "5d34eb533aa6df06350c5ab6674985f6c34f88ab58d391c92c3dd8300a620605"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 2,
+      "policy": "small-events",
+      "bundle": "balanced-2-small-events",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 20792458,
+        "throughput_ops_s": 4809436.190757245,
+        "accepted_ops_s": 4809436.190757245,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 584,
+        "p999_ns": 792,
+        "max_ns": 13917,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10977280,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "2b71a0c4594ef1ceafa752e1c5c0e6badd47eb66ad0ade38d4f0b7706e4d2269",
+        "runs.csv": "b30d762cb18744a992f51e8e6538c768af6d4edb5e62c44bdd846637edf184a0",
+        "samples.csv": "c018f2cd07db85f7a1dc9a53332fd198488adc2724dcacac1838997af0bfe21d"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 2,
+      "policy": "flat-prices",
+      "bundle": "balanced-2-flat-prices",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 20370875,
+        "throughput_ops_s": 4908969.300533237,
+        "accepted_ops_s": 4908969.300533237,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 417,
+        "p99_ns": 542,
+        "p999_ns": 708,
+        "max_ns": 33500,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 11026432,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "efbddde7577e33f9892bc7df09d186f7e7adaec0c382ddcee09db2e0f83501de",
+        "runs.csv": "bc0aa30b1dfe7f58381d479a326fa2b583a5fbeff9cd0576ec6307ed115f31db",
+        "samples.csv": "fc1973210b8a7949855377bed929f83e1ad1a73875da81ae8c00443349666977"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 2,
+      "policy": "baseline",
+      "bundle": "balanced-2-baseline",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 21021125,
+        "throughput_ops_s": 4757119.326391904,
+        "accepted_ops_s": 4757119.326391904,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 583,
+        "p999_ns": 750,
+        "max_ns": 1875,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10960896,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "e43c423a28dc7c08ffc86df7d50e237bb36dc1d7f2b82c39d05f674ee7ef69d9",
+        "runs.csv": "f9055a968005bf87e6bac192e3aaf1acfef8be0d774bb4650e4069b48412c51b",
+        "samples.csv": "9ba6efbea17dc38c6a73767498b3dd797ef6ac57239a1a2f5a80a8ef5b4c7e6f"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 2,
+      "policy": "direct-flat",
+      "bundle": "balanced-2-direct-flat",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 8918458,
+        "throughput_ops_s": 11212700.670900732,
+        "accepted_ops_s": 11212700.670900732,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 291,
+        "p999_ns": 500,
+        "max_ns": 36458,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10911744,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "27d9c511406d76c16d013dbb411794dfbd0171c84299cd75b61ef8bf42d19c5c",
+        "runs.csv": "1e2446ee725d1cc25c1af6cc1bba1c0948e6534b0d3f07b1686170d2b11b9602",
+        "samples.csv": "6dcf6f3fa5a8b3f0c9824268566cfcaaef258f18bebe5218045238271da99417"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 2,
+      "policy": "direct-risk",
+      "bundle": "balanced-2-direct-risk",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 9607875,
+        "throughput_ops_s": 10408128.74855262,
+        "accepted_ops_s": 10408128.74855262,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 250,
+        "p999_ns": 333,
+        "max_ns": 13041,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10944512,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "f48179ac6a8c4c88f75cdb94997a4d35dd272497c40f62257e071e19eb318d64",
+        "runs.csv": "12f994215eb7c8ca39ac9424ae16faf7320c29741f9d1d47dd48fa5658f588c9",
+        "samples.csv": "2be44d98763882aa56a0aa06f1a1493c9be7c4079f120f9ff31499ccdd07cc06"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 3,
+      "policy": "small-events",
+      "bundle": "balanced-3-small-events",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 21273708,
+        "throughput_ops_s": 4700637.989390472,
+        "accepted_ops_s": 4700637.989390472,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 584,
+        "p999_ns": 791,
+        "max_ns": 9083,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10928128,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "5912f14be7779fcb193dc1f7767eb9e8bf045ca07034a3003d8b8f01c5173988",
+        "runs.csv": "91d2e26a67e5035b4551ae9268987a54bca73ba3f22651694aa361f43b5af693",
+        "samples.csv": "25529fcf2f4eb356b42242001861f311bfca1f4309617c310071e1fcdebde425"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 3,
+      "policy": "direct-risk",
+      "bundle": "balanced-3-direct-risk",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 9712333,
+        "throughput_ops_s": 10296187.3321271,
+        "accepted_ops_s": 10296187.3321271,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 250,
+        "p999_ns": 292,
+        "max_ns": 14167,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10928128,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "755251f7ad2e16b427c3e80bba370f081fbbeeeb127ce679a6810ef34aa81f1b",
+        "runs.csv": "afec94753a4a35fd8d5e5f2e2abcf46f2142363bc80e8ad2c614b53679413fd4",
+        "samples.csv": "7332653ce66d750bcc4f30fdc774e3f1e8641fd8e21a446c6b59adb7e8f74c71"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 3,
+      "policy": "flat-prices",
+      "bundle": "balanced-3-flat-prices",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 21601041,
+        "throughput_ops_s": 4629406.51795439,
+        "accepted_ops_s": 4629406.51795439,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 625,
+        "p999_ns": 1000,
+        "max_ns": 113667,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 11010048,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "cf199f8ccc1bef731d7077f3a0383e7c43a406a44dfdd7bb1a13902bb0aef9d5",
+        "runs.csv": "eb0f95b97651defcf9891dfa048f07909027283bbda54c2c7617a0be881c6edf",
+        "samples.csv": "a45ca661d95bb78fab2d4ff0b647be0063e0fddfbf1d1613f4b7bc7732682c5e"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 3,
+      "policy": "baseline",
+      "bundle": "balanced-3-baseline",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 21244416,
+        "throughput_ops_s": 4707119.273130408,
+        "accepted_ops_s": 4707119.273130408,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 584,
+        "p999_ns": 791,
+        "max_ns": 14792,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10960896,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "bf2fd8c50d2fa25617c436b41e404d9682b7f62249485684048823d79cb2e62f",
+        "runs.csv": "2b2839c345afd8c14eed07eee73f62a7f4fcaac052dbda5a0b92a96db0892b03",
+        "samples.csv": "2bca6484d39279cc5b6bdec453b1b98864df2735ed604cec1391310fcfe6fb61"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 3,
+      "policy": "direct-flat",
+      "bundle": "balanced-3-direct-flat",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 8996250,
+        "throughput_ops_s": 11115742.670557177,
+        "accepted_ops_s": 11115742.670557177,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 209,
+        "p999_ns": 292,
+        "max_ns": 14292,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10960896,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "db69ec961106405570304bafd30be00cf46fe5915a3c8a8cd08afd141e145c31",
+        "runs.csv": "0182543c93a7a249df9ce65bce6f158c2c5eaff35ceb571d89bfe27448a79a2b",
+        "samples.csv": "fafd52ffe4edb2f6a21394dce2775614a30088fb20e722a20dd506456506d1f3"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 4,
+      "policy": "direct-risk",
+      "bundle": "balanced-4-direct-risk",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 9628791,
+        "throughput_ops_s": 10385519.843560837,
+        "accepted_ops_s": 10385519.843560837,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 250,
+        "p999_ns": 333,
+        "max_ns": 13709,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10928128,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "bf47e6e970fd51591f9775e0c76c9dfaa3b4a287b8eb906115019872e352144e",
+        "runs.csv": "1ce8f2be1ceb6384f4b0f7e4d4594c3437fe0b813819cfaaef813038fa4ba468",
+        "samples.csv": "0107820efc8cf3149d7897a5a2a50aff7051bdc52747dff1641bd65435d5d6c5"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 4,
+      "policy": "flat-prices",
+      "bundle": "balanced-4-flat-prices",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 20535667,
+        "throughput_ops_s": 4869576.430120337,
+        "accepted_ops_s": 4869576.430120337,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 417,
+        "p99_ns": 583,
+        "p999_ns": 709,
+        "max_ns": 13459,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10993664,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "b8b86e5be27294da8c04e0138151e5963f4118aea26a83bf3394996957951ad9",
+        "runs.csv": "37ee0672dad42444c6e9485d96c7c326737ac4c24045d445839e0e388e650761",
+        "samples.csv": "c7908a2f273c81ef8bb26ccce514bff8a68ee347e52c1a265573548769f196c0"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 4,
+      "policy": "small-events",
+      "bundle": "balanced-4-small-events",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 21165042,
+        "throughput_ops_s": 4724772.102979999,
+        "accepted_ops_s": 4724772.102979999,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 584,
+        "p999_ns": 792,
+        "max_ns": 14084,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10993664,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "c384e7646cab79f846f2127f32873e1fef2f4e93945a152033e309f5b7c1c887",
+        "runs.csv": "dd18152c9f27fe6d98af3aae57f798d00bcc88dd92b6251ae9d911e26b665d4d",
+        "samples.csv": "a5c1ffd34fd86b0c8bdf6813d3bb2070efa28234b22f7b9551d8fc50a9ac6624"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 4,
+      "policy": "direct-flat",
+      "bundle": "balanced-4-direct-flat",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 9067000,
+        "throughput_ops_s": 11029006.286533583,
+        "accepted_ops_s": 11029006.286533583,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 209,
+        "p999_ns": 292,
+        "max_ns": 4959,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10928128,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "9d447340a7252fad6404b7788b6f9fd6e8b96ae12b4f32b3686f23552df07611",
+        "runs.csv": "5e156bb9c0c47b712e2adf98e6c9caa078501a2535c08acbb9ff481da1ce5df0",
+        "samples.csv": "a3c42c32e2b7af0ed496056757cd0468beb857c76c4e07262d97687f8eab1c47"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 4,
+      "policy": "baseline",
+      "bundle": "balanced-4-baseline",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 20628708,
+        "throughput_ops_s": 4847613.335745506,
+        "accepted_ops_s": 4847613.335745506,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 584,
+        "p999_ns": 791,
+        "max_ns": 14292,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10960896,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "7bfbb73b7ae9364dd1ec64f2475f886b48ebd0737776ae7b8f595888323e8988",
+        "runs.csv": "1beaa5dfdd94436a300af359e5f8a101aad847a520986e53c44c16f8c08c8b5f",
+        "samples.csv": "ca811fc2ff25b64045a2fb5cba23dc48b746aa980b4e6061630b5df7e38e2e80"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 5,
+      "policy": "direct-flat",
+      "bundle": "balanced-5-direct-flat",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 8936959,
+        "throughput_ops_s": 11189488.50498251,
+        "accepted_ops_s": 11189488.50498251,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 209,
+        "p999_ns": 292,
+        "max_ns": 13458,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10911744,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "7d70f755543b2aa122b7e4defd4986431bd5e0b5482f1001f52ca13667c31d35",
+        "runs.csv": "cf4f860b590f80e39e909d4536420e3f3feb9113535b0be25ec4f7b6119def79",
+        "samples.csv": "895560b54b8173af2f721e056e7ef8c03903a66366a463849b2ead49b0518775"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 5,
+      "policy": "small-events",
+      "bundle": "balanced-5-small-events",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 21528542,
+        "throughput_ops_s": 4644996.395947296,
+        "accepted_ops_s": 4644996.395947296,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 584,
+        "p999_ns": 791,
+        "max_ns": 1458,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10977280,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "4518218f11c183771a0f5e9516823cf6d35a1a3b02388ebbc33f4be7d4c3ecd8",
+        "runs.csv": "988fcfdb5926e401bf7c60b1849f27618bf968428770da83b4d82056fd53a69f",
+        "samples.csv": "e6d3cf8337c70bc60e8f728c3d89dc423c620ecd7d00d4ec8566a663ce4dd8d6"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 5,
+      "policy": "flat-prices",
+      "bundle": "balanced-5-flat-prices",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 20600750,
+        "throughput_ops_s": 4854192.201740228,
+        "accepted_ops_s": 4854192.201740228,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 417,
+        "p99_ns": 542,
+        "p999_ns": 709,
+        "max_ns": 2375,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 11026432,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "26aa6e69f47fe70197a19a1074ccba0338df62bfd955bc5231ae33c5e10336be",
+        "runs.csv": "0363b8def2577c419482c6b1f230673770d1aa36e5e7b1724c65fb43b5669b80",
+        "samples.csv": "2990c94972c8dbb895ea69e59ae4de3e5e4143132d3bd667c0388d159606e924"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 5,
+      "policy": "baseline",
+      "bundle": "balanced-5-baseline",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 22418834,
+        "throughput_ops_s": 4460535.280291562,
+        "accepted_ops_s": 4460535.280291562,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 459,
+        "p99_ns": 625,
+        "p999_ns": 791,
+        "max_ns": 1750,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10928128,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "87c2e5b2b36c2d3acf9b5e4926827844a86dc8342d7ee631d979f308867a4a4f",
+        "runs.csv": "09c90c20e1af1372418392c0d2299fcbfb54108e0479bbe5cdc8aecda7e16c70",
+        "samples.csv": "b600c5827181d624961a043512f9138ad82aec1e5ba4516d36ef05f7f168f92c"
+      }
+    },
+    {
+      "profile": "balanced",
+      "block": 5,
+      "policy": "direct-risk",
+      "bundle": "balanced-5-direct-risk",
+      "workload_hash": "4199826038201248135",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37649,
+        "events": 285041,
+        "elapsed_ns": 9708833,
+        "throughput_ops_s": 10299899.071289001,
+        "accepted_ops_s": 10299899.071289001,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 250,
+        "p999_ns": 292,
+        "max_ns": 2042,
+        "event_hash": "18274113091174487284",
+        "book_hashes": [
+          "6906406119889042554"
+        ]
+      },
+      "process_peak_rss_bytes": 10911744,
+      "files_sha256": {
+        "input.workload": "f8fbad4075b8aabded2ce6be21fb36e899cdda567c20919223ad1a223e45323f",
+        "results.json": "dfa256638d3f450fc42974fecf740feadda3182e1d1fa04eb6f5cece464ed834",
+        "runs.csv": "0c1e814d1831dcdd004e3701e5284208b24028a63cf443fabef1ec3b3ff2c400",
+        "samples.csv": "ef8489557effeeb58087494a2370ae84d5c52f4b3c90f8b405e3f4d81bf881a2"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 1,
+      "policy": "flat-prices",
+      "bundle": "many-levels-1-flat-prices",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 20310791,
+        "throughput_ops_s": 4923491.162899564,
+        "accepted_ops_s": 4923491.162899564,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 417,
+        "p99_ns": 542,
+        "p999_ns": 708,
+        "max_ns": 15417,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10944512,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "fb6a08008f72fcb11a5bf8097e73ff05ac352fe612d9a5eaf658bca65009c2c6",
+        "runs.csv": "cd9caff7a881129ca3eef85ebfc0561ea026586d72f5aa2620ba17fb2910db5b",
+        "samples.csv": "50aa442bd65076998cc32e3c17c34e0a6582330c46815805031b4ce6b305baf5"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 1,
+      "policy": "direct-risk",
+      "bundle": "many-levels-1-direct-risk",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 9744709,
+        "throughput_ops_s": 10261979.090396645,
+        "accepted_ops_s": 10261979.090396645,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 250,
+        "p999_ns": 333,
+        "max_ns": 13375,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10862592,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "817b4663c5b2110e2525ab68430af4d4a645ace409a4e003c6e152886dea9edc",
+        "runs.csv": "ca4aebd4047338db187fd66d4a05bd1fda19862368cc95ee3a30fba6767a02c2",
+        "samples.csv": "b2a4db2010c0e31275e23b3d11583893ba183fde0996a643fd519bf71f4384aa"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 1,
+      "policy": "baseline",
+      "bundle": "many-levels-1-baseline",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 20865875,
+        "throughput_ops_s": 4792514.092986755,
+        "accepted_ops_s": 4792514.092986755,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 584,
+        "p999_ns": 750,
+        "max_ns": 17958,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10911744,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "287beebc7d7a0a91a6959f7a67bd77df2898b79faa421614c5c10c1598015228",
+        "runs.csv": "4b3e6c805106d2fb8c30fa3db81ab7dc4c4971a562542ac7a5d6e1366f3d16b6",
+        "samples.csv": "7d06b5aa2aad92d58df9f8bea92f05f9e1963ee496bd95ff8310eac94f00a11a"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 1,
+      "policy": "small-events",
+      "bundle": "many-levels-1-small-events",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 21026125,
+        "throughput_ops_s": 4755988.086249844,
+        "accepted_ops_s": 4755988.086249844,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 500,
+        "p99_ns": 625,
+        "p999_ns": 875,
+        "max_ns": 2041,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10944512,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "8a918b0b603e312a95f20a354e25072703d48037761401e450e6749e0944bfd2",
+        "runs.csv": "b3e68f7c8191278c230ff9eb2c50d0285a810524e990fbfa4141e9b5c0f9af5e",
+        "samples.csv": "e3335f2262857e38f42acb011af2de17c688836700d3c9899e4197845e6125e1"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 1,
+      "policy": "direct-flat",
+      "bundle": "many-levels-1-direct-flat",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 9685750,
+        "throughput_ops_s": 10324445.706321143,
+        "accepted_ops_s": 10324445.706321143,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 209,
+        "p999_ns": 292,
+        "max_ns": 1083,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10928128,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "c0b5a68cddad133b9278865fdc3b73e02ac958c995b0418813c46719c2fd4b3e",
+        "runs.csv": "5e71fdb75202ebbe3dde2a9942b296fa505aed6970323c397ea7a9a03e4b2a0c",
+        "samples.csv": "b0392e7d103d05610465b65b4a1f81e1d27646e4507177f91cfbe126ee57dce1"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 2,
+      "policy": "direct-risk",
+      "bundle": "many-levels-2-direct-risk",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 9993167,
+        "throughput_ops_s": 10006837.672181401,
+        "accepted_ops_s": 10006837.672181401,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 250,
+        "p999_ns": 333,
+        "max_ns": 2166,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10878976,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "857504276ef7f2017dbe47df61600e48eb4e28c9a0ccb6fd76b2dd28d1dc1724",
+        "runs.csv": "203f677a8b2d592a8a7d7773da78b84ee3c5e35a0dbc67a04c9450261016f07b",
+        "samples.csv": "b0292be2ef34efcba6694f912046dfeefc1de44166cf9adb1bfd1e7a71344e44"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 2,
+      "policy": "small-events",
+      "bundle": "many-levels-2-small-events",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 21183750,
+        "throughput_ops_s": 4720599.51613855,
+        "accepted_ops_s": 4720599.51613855,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 584,
+        "p999_ns": 750,
+        "max_ns": 5500,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10911744,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "c669e9f68f2eb0bbcd9bc07efa6d32115c04a35ed6d19a222d417029880fbe6f",
+        "runs.csv": "47f3b26ead6f2c247fb5e0e7aca83eeefa7ae0b2866353725c8af9f0e66d6454",
+        "samples.csv": "d4d441d04d26d21b02cbafa8f8f858bf536cd1ad854065a26f675a94750bd4d0"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 2,
+      "policy": "baseline",
+      "bundle": "many-levels-2-baseline",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 20815292,
+        "throughput_ops_s": 4804160.32597573,
+        "accepted_ops_s": 4804160.32597573,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 583,
+        "p999_ns": 709,
+        "max_ns": 14292,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10911744,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "99ddfd6e5d8211701d1fe9d0c6f7f55fca3fde3acdb2203ab8cf30cac5382e6b",
+        "runs.csv": "9d391918c9b013186469802fe496a1e460916c404546ffdb5d3d2c1b3d86af48",
+        "samples.csv": "31c68900f8d8525c9711f7a59a6abc764fd28932775dae7c3911c20f901cf702"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 2,
+      "policy": "flat-prices",
+      "bundle": "many-levels-2-flat-prices",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 20013334,
+        "throughput_ops_s": 4996668.720963733,
+        "accepted_ops_s": 4996668.720963733,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 417,
+        "p99_ns": 542,
+        "p999_ns": 667,
+        "max_ns": 13500,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10960896,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "a3b21fd32e822edc12f46ddd4858e380479b9bbf19ebe49c8ce012c6e0e2b997",
+        "runs.csv": "c661e416f4cf7530d4109ef1bcb68d11a4a73856aeac40644aa7f1538b4896d4",
+        "samples.csv": "d3a7461aad2f8c16f367c7cd4d84c773d272f2b71990ce5c48aa6d6c0402e345"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 2,
+      "policy": "direct-flat",
+      "bundle": "many-levels-2-direct-flat",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 8990000,
+        "throughput_ops_s": 11123470.522803115,
+        "accepted_ops_s": 11123470.522803115,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 209,
+        "p999_ns": 292,
+        "max_ns": 2583,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10911744,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "1b6dd50176cf240980f4e88b886d23d2020cac4cd57bab146c166244a577c382",
+        "runs.csv": "cbfe08d638d05da6e3d04e40ad062f3e37ee4ce758faa0dd91b4bbd0c5aab28d",
+        "samples.csv": "4236727d9fe472d9beeff783c41fd25f89f4d0ebd86d959c4d00212b053994b9"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 3,
+      "policy": "direct-flat",
+      "bundle": "many-levels-3-direct-flat",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 10994208,
+        "throughput_ops_s": 9095698.389552025,
+        "accepted_ops_s": 9095698.389552025,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 208,
+        "p99_ns": 334,
+        "p999_ns": 1209,
+        "max_ns": 172750,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10895360,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "d1ddb404996f0bd4fbc0b5c228ce745cdd341ee5e3b5473dbfe186ba42661680",
+        "runs.csv": "5027d1fa1b61c4b2cdec6a438a148ff02fd013756f27920bd2177c8706ad9da4",
+        "samples.csv": "adf720bb46682bef84dd92033e6ffaf5de1b64072f9c9181bb1625e0abe60f5d"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 3,
+      "policy": "baseline",
+      "bundle": "many-levels-3-baseline",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 22234667,
+        "throughput_ops_s": 4497481.342985708,
+        "accepted_ops_s": 4497481.342985708,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 209,
+        "p95_ns": 792,
+        "p99_ns": 1459,
+        "p999_ns": 11666,
+        "max_ns": 400666,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10469376,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "dc276d48ec707f1c5f723a1fbaf1369fd91b4d241a7a0211a456ef881146c06e",
+        "runs.csv": "029dac35eba03894517dd2e6bc2b8ab187233d7c08768a9fa754fb4b22af95cb",
+        "samples.csv": "9ff0723a74d95a9551b5a85e9083358def79a62d0cfe6b8a4bb9fa62769693b6"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 3,
+      "policy": "direct-risk",
+      "bundle": "many-levels-3-direct-risk",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 9784833,
+        "throughput_ops_s": 10219898.48983626,
+        "accepted_ops_s": 10219898.48983626,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 250,
+        "p999_ns": 333,
+        "max_ns": 21792,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10895360,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "adbb1e6db2ff4b719e1e0297177b22e78aa3c323751c6d47354347424db78383",
+        "runs.csv": "81c4747e7c7174985dbf234ee8834078c192b34979792dafe96ca7aca70ee291",
+        "samples.csv": "178f91a439440728d351d3410737a659cadd587fb2cd2c6206da0aa4f70e0859"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 3,
+      "policy": "flat-prices",
+      "bundle": "many-levels-3-flat-prices",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 21292250,
+        "throughput_ops_s": 4696544.517371344,
+        "accepted_ops_s": 4696544.517371344,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 583,
+        "p999_ns": 709,
+        "max_ns": 16083,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10928128,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "4d7a0cfa28ca0891ccf019f5c37924b4044b598e3e5886f0e9ae4924e1ee49f7",
+        "runs.csv": "2c736c0df802559a85eb56d3e3d9ad2920a98157eb288fff92dc38a623fdd5c9",
+        "samples.csv": "42bc05fe431db764f0031016bb4a94f608f629e8df6f96fd1aed28146c9dc1e5"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 3,
+      "policy": "small-events",
+      "bundle": "many-levels-3-small-events",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 21233375,
+        "throughput_ops_s": 4709566.896454285,
+        "accepted_ops_s": 4709566.896454285,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 584,
+        "p999_ns": 750,
+        "max_ns": 2083,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10944512,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "693205590af48735f89e6d5c0fb3cde04e1611b29695e6e850f1d2cb7c24ce42",
+        "runs.csv": "877b055be2534aec71608a9187e6af8c9878f48a966c0372483d8b4f6f7146a4",
+        "samples.csv": "5c3ca413d8d56c7922cbb722fc14dc0f37d473efe22116748b170b3106384542"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 4,
+      "policy": "direct-flat",
+      "bundle": "many-levels-4-direct-flat",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 8846500,
+        "throughput_ops_s": 11303905.499350026,
+        "accepted_ops_s": 11303905.499350026,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 208,
+        "p999_ns": 292,
+        "max_ns": 500,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10911744,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "4115e096cdfccc8b21bd8d22851fea6bed88860253cc2e240f2817ff92b23e1a",
+        "runs.csv": "bd3478894d0330836e7da85eb46ec56baeca9935ba46486dce2fcaf182730bfc",
+        "samples.csv": "d0670fac21e4e087635f1bc58d2e96ed282396dff210f39e1df8546fd74e21df"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 4,
+      "policy": "small-events",
+      "bundle": "many-levels-4-small-events",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 21409625,
+        "throughput_ops_s": 4670796.42917613,
+        "accepted_ops_s": 4670796.42917613,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 459,
+        "p99_ns": 625,
+        "p999_ns": 792,
+        "max_ns": 13500,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10960896,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "54bfa817410e771134470137f335290ffd6a184b3951ffd05265d26fe0452157",
+        "runs.csv": "8c4a7ec4b93162f4c23c936cff7cd7c882cc7d8b0e6175bf29542d74a22ccb50",
+        "samples.csv": "37cf5938cbc11cdedb7c9d49db478b5a93b5c89343436174c11e3897203dc4aa"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 4,
+      "policy": "baseline",
+      "bundle": "many-levels-4-baseline",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 21183250,
+        "throughput_ops_s": 4720710.939067423,
+        "accepted_ops_s": 4720710.939067423,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 583,
+        "p999_ns": 750,
+        "max_ns": 15167,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10928128,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "603b846f2f71d558c5014c789f0f8547fb6f41d641fca336ee28a64e27da9a1c",
+        "runs.csv": "07a2d8fea0352410773a9bebce219abfa249e5049f4bd4800379882b68a29a82",
+        "samples.csv": "96f682304dfb9303ce2e1a401d562ca5b96e0388ad4715640bec9782b430c59f"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 4,
+      "policy": "flat-prices",
+      "bundle": "many-levels-4-flat-prices",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 19856584,
+        "throughput_ops_s": 5036112.958804999,
+        "accepted_ops_s": 5036112.958804999,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 417,
+        "p99_ns": 542,
+        "p999_ns": 708,
+        "max_ns": 15708,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10944512,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "06df34173fa8be3ca70864c27a7b73f0bbbbd76fe1d8bc5881bf6f337fa82439",
+        "runs.csv": "1b553cadfe097d49e840710dcc8a641eb1cac460f1107d143e04086ba4cf871d",
+        "samples.csv": "f9dd1ad2784c7caf486ced0b843a4a16fa78c0ef17e5214274aa9dab2649cb93"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 4,
+      "policy": "direct-risk",
+      "bundle": "many-levels-4-direct-risk",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 9952208,
+        "throughput_ops_s": 10048021.504373703,
+        "accepted_ops_s": 10048021.504373703,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 250,
+        "p999_ns": 333,
+        "max_ns": 11500,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10911744,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "2190d1e20a75914ee091ac0d12b65f1fe344758f2cd747a1cf9a6d112c6458ec",
+        "runs.csv": "1c021488d15e01d2f09de6490cde105c58b136d5ed00f4d3bc26dcbb727f559b",
+        "samples.csv": "b019f79d9fee0ed40c829ca3fb0ec54f88daf8dec35f419a5417e8b49dba26ac"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 5,
+      "policy": "direct-flat",
+      "bundle": "many-levels-5-direct-flat",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 8988709,
+        "throughput_ops_s": 11125068.127135944,
+        "accepted_ops_s": 11125068.127135944,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 209,
+        "p999_ns": 292,
+        "max_ns": 1958,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10895360,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "36eb807ded26e4fc03aeafc997bfe05678d2bf6e707a3503befe7168ccf70167",
+        "runs.csv": "4426722e9c385923bb20f6db2c168c8e6d377c39d8f7d66509841914d08b8bd0",
+        "samples.csv": "a66e0e475ab96b72b4f928f1409ccd1a69c6cfcdd2678f15bb4a531a7336c956"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 5,
+      "policy": "flat-prices",
+      "bundle": "many-levels-5-flat-prices",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 19884708,
+        "throughput_ops_s": 5028990.1164251445,
+        "accepted_ops_s": 5028990.1164251445,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 583,
+        "p999_ns": 750,
+        "max_ns": 14250,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10928128,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "cb2cc584d6e7857890409ea8311ce91fabac8d65b0811c927632813e5cc64adb",
+        "runs.csv": "232048cb96b77120e6d011ddd120cb5bff4ce0475563c735a3fc862ee4d97fd2",
+        "samples.csv": "c9e745c23257bac2e25f2b54ca8fd53d42f19fce859f5c49a5170778cebce179"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 5,
+      "policy": "direct-risk",
+      "bundle": "many-levels-5-direct-risk",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 9827750,
+        "throughput_ops_s": 10175269.008674417,
+        "accepted_ops_s": 10175269.008674417,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 83,
+        "p95_ns": 167,
+        "p99_ns": 250,
+        "p999_ns": 333,
+        "max_ns": 19250,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10829824,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "7913fb986739a2c295e35e0982062e03c79eddeca24baa31be3dfdee33527d18",
+        "runs.csv": "586c2b57ed5ad7797eb80d20468602be9aece9195078e0188cb134ea8930dd2b",
+        "samples.csv": "c8911c536569583f797b9eca3175bb77deb5cab1aaff2fb4ea3c56999eb8160d"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 5,
+      "policy": "baseline",
+      "bundle": "many-levels-5-baseline",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 21019417,
+        "throughput_ops_s": 4757505.881347708,
+        "accepted_ops_s": 4757505.881347708,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 583,
+        "p999_ns": 750,
+        "max_ns": 17750,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10878976,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "c6289e45ee899f60c88f078ff568ad48a5a19f899209fdbb7b037d1dcb2606a9",
+        "runs.csv": "c986db244a0ff00788145815597b944fa53d47537eb7ee4b3aa9b205fc89952d",
+        "samples.csv": "959adfb7d94374824f6628377142be08a53b36a150b87cb45a03080c0904b523"
+      }
+    },
+    {
+      "profile": "many-levels",
+      "block": 5,
+      "policy": "small-events",
+      "bundle": "many-levels-5-small-events",
+      "workload_hash": "10863698599490890727",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 37614,
+        "events": 284817,
+        "elapsed_ns": 21204125,
+        "throughput_ops_s": 4716063.501795052,
+        "accepted_ops_s": 4716063.501795052,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 458,
+        "p99_ns": 583,
+        "p999_ns": 750,
+        "max_ns": 1959,
+        "event_hash": "11577994338365840252",
+        "book_hashes": [
+          "13076475618779306593"
+        ]
+      },
+      "process_peak_rss_bytes": 10928128,
+      "files_sha256": {
+        "input.workload": "4644b879451d16f9384ef4610af23ebf476b791ecd5385beb60aa27795e1c240",
+        "results.json": "b820cff2440e7cb77dfd3566a572328380c9e163a957a23629371f49bd5146cd",
+        "runs.csv": "e319a2ef9a165c0ac777a8d7f02b04d9115d4ae040a8616594124f6bf61602fd",
+        "samples.csv": "77473599162d9febd735591d5b3b0b00eff54e73a8dece2c32549a0c15180a9e"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 1,
+      "policy": "small-events",
+      "bundle": "large-partial-1-small-events",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 21054917,
+        "throughput_ops_s": 4749484.407846395,
+        "accepted_ops_s": 4749484.407846395,
+        "samples": 100000,
+        "min_ns": 41,
+        "p50_ns": 167,
+        "p95_ns": 875,
+        "p99_ns": 917,
+        "p999_ns": 959,
+        "max_ns": 14709,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10633216,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "7447e38c712a7676372e9c6bc9004d9723bd4e137965173411e62dab84f8cb9a",
+        "runs.csv": "0ac38a3bebaf07bd2c6cd5eadb3270a15b4ef9ca4eb751706f196a2750e8c074",
+        "samples.csv": "c831ece025c9ca3de9a78b73f4108dc24831c20c427dc309567d314ab0077065"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 1,
+      "policy": "direct-risk",
+      "bundle": "large-partial-1-direct-risk",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 10104542,
+        "throughput_ops_s": 9896539.595758026,
+        "accepted_ops_s": 9896539.595758026,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 42,
+        "p95_ns": 625,
+        "p99_ns": 708,
+        "p999_ns": 750,
+        "max_ns": 15167,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10534912,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "9c76ff7c7ad0b33f59e8b36d4ebc7640e755335f9c28fcecd8b841dd505c1665",
+        "runs.csv": "cb55679d223e10da5a62a5006a7b19c15447a9f6e6c0ed443b8d349283cb6b30",
+        "samples.csv": "2c84430e4edbbbc2642498ff67cff2bb680b1cc0a80046eb73a3bae141453423"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 1,
+      "policy": "baseline",
+      "bundle": "large-partial-1-baseline",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 20296291,
+        "throughput_ops_s": 4927008.5849675685,
+        "accepted_ops_s": 4927008.5849675685,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 791,
+        "p99_ns": 834,
+        "p999_ns": 917,
+        "max_ns": 3500,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10600448,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "d228cf3a297f390dd29df73316a46e1d33f58ee4d35054c128cf961022242f09",
+        "runs.csv": "3688344e7fa04226ba915d0c952d3e4df5de781b71586f0976467244a2527c99",
+        "samples.csv": "77f48a7657d203a0e49d7c1ea86f586e5c6c21419651347cf9e8aa936622025d"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 1,
+      "policy": "flat-prices",
+      "bundle": "large-partial-1-flat-prices",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 57093125,
+        "throughput_ops_s": 1751524.3735563608,
+        "accepted_ops_s": 1751524.3735563608,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 750,
+        "p99_ns": 792,
+        "p999_ns": 875,
+        "max_ns": 56834,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10633216,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "db5b24a8284bde2d190a20117986159a0a71bb7c1b19372f75d08229008c2a88",
+        "runs.csv": "d94520e8f234889311d7891d0c0534125c9f4b7bdb7f755e355605b0fa4dc836",
+        "samples.csv": "3334ce8a4f2e4c3ac7c6720910153c84c3d1eecef6983e2308df54dcc525e4b9"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 1,
+      "policy": "direct-flat",
+      "bundle": "large-partial-1-direct-flat",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 10154958,
+        "throughput_ops_s": 9847406.557466805,
+        "accepted_ops_s": 9847406.557466805,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 42,
+        "p95_ns": 625,
+        "p99_ns": 708,
+        "p999_ns": 750,
+        "max_ns": 13583,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10600448,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "dda3e0622b2ce25af54d0f2068236859251df9689ec6cddf0f4260636eb23407",
+        "runs.csv": "8b267de7bc72b2d962f0b90ef7698c2c471994d68ab43ac875b133f4d1c171a3",
+        "samples.csv": "8e8b2ed338bb6414baedf13273e521cccbb7d686b91e03710329c7774586816d"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 2,
+      "policy": "flat-prices",
+      "bundle": "large-partial-2-flat-prices",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 28262708,
+        "throughput_ops_s": 3538231.368345878,
+        "accepted_ops_s": 3538231.368345878,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 750,
+        "p99_ns": 834,
+        "p999_ns": 1875,
+        "max_ns": 80416,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10682368,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "5c8ecf5a8ef891d80260d0dac4b57d0cbdf4db03ab8ec1205239803413b6927a",
+        "runs.csv": "15c5f156693046e47edfa44364463d3ef215152266e7e96da76ff2a2dac83df5",
+        "samples.csv": "5b2a2faa931f9a9b4a7406a9d9e7230d522fbde01c5c211cd448cc5fcbf0d25b"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 2,
+      "policy": "small-events",
+      "bundle": "large-partial-2-small-events",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 20440500,
+        "throughput_ops_s": 4892248.232675326,
+        "accepted_ops_s": 4892248.232675326,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 875,
+        "p99_ns": 958,
+        "p999_ns": 1125,
+        "max_ns": 28459,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10649600,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "ca246051a23fd2ced09a0b1df93d23d2987e866dacf0d766d22e94b402ca1ed8",
+        "runs.csv": "4d0f3dd501654e0e00cfec69bacc0464ee5766880baf3fb23c286b3d3f4f0e8f",
+        "samples.csv": "353725914f23ca015108c6f42b5c0493a5e7f708f2280490ccb3fede6d548a79"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 2,
+      "policy": "direct-risk",
+      "bundle": "large-partial-2-direct-risk",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 10357250,
+        "throughput_ops_s": 9655072.53373241,
+        "accepted_ops_s": 9655072.53373241,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 42,
+        "p95_ns": 666,
+        "p99_ns": 708,
+        "p999_ns": 833,
+        "max_ns": 1625,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10584064,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "8c611c5dde0f16086748f5b9d5fb85f561f2b1c333db24a73b192ccb6a88692b",
+        "runs.csv": "ebbb0075fb1e5fb25299166fc2746f1586879dc4eb4ea0fa2ec59b6135786272",
+        "samples.csv": "28ae20482922ab6f3718313d74c964b479b3a3d0ec04883a795609505a7e804f"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 2,
+      "policy": "baseline",
+      "bundle": "large-partial-2-baseline",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 20154833,
+        "throughput_ops_s": 4961589.113638401,
+        "accepted_ops_s": 4961589.113638401,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 750,
+        "p99_ns": 833,
+        "p999_ns": 958,
+        "max_ns": 13250,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10584064,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "8012cd3ae5bd32d8ee03b91f582c9154ba914a72cfd6b9dfd04ec200c8631348",
+        "runs.csv": "39a3f03ef3876dddbd45965dc9a654f5345a7de58ad886e642156251d595bf6c",
+        "samples.csv": "65ddce315e1e7448c6f34aadb2f69cc56d686a240ce2c5225a1eb166c9762e7c"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 2,
+      "policy": "direct-flat",
+      "bundle": "large-partial-2-direct-flat",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 10024417,
+        "throughput_ops_s": 9975642.473771792,
+        "accepted_ops_s": 9975642.473771792,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 42,
+        "p95_ns": 625,
+        "p99_ns": 667,
+        "p999_ns": 750,
+        "max_ns": 7042,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10584064,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "fde1c032657d712a89c64d55988b4aa2c5cd3b58a09fbb5408d70c5256bc22e7",
+        "runs.csv": "4314022bab0f5e0c814d29d71c4e82907e275f5c71f0b1c8b7c0cf7d21f025ea",
+        "samples.csv": "a6195a8cbd04e07390425595722da40b5cfbbb5feda1c67f19f4bed2147d89be"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 3,
+      "policy": "baseline",
+      "bundle": "large-partial-3-baseline",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 19491625,
+        "throughput_ops_s": 5130408.572912726,
+        "accepted_ops_s": 5130408.572912726,
+        "samples": 100000,
+        "min_ns": 41,
+        "p50_ns": 167,
+        "p95_ns": 750,
+        "p99_ns": 792,
+        "p999_ns": 875,
+        "max_ns": 13333,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10551296,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "7d701c266d1d5afcf13a8d707f0e484d31daa851046c34bd5ec9c05ef35b8cd6",
+        "runs.csv": "204c7c82aead55270d1f8f6658a098c8a7bf1d0b989477f31b2d303e735c47c9",
+        "samples.csv": "616406eba2a6cf66de7b93b7b09d19b34cd336ba5e876f214ce2a96883931851"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 3,
+      "policy": "direct-risk",
+      "bundle": "large-partial-3-direct-risk",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 10362875,
+        "throughput_ops_s": 9649831.73105919,
+        "accepted_ops_s": 9649831.73105919,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 42,
+        "p95_ns": 666,
+        "p99_ns": 709,
+        "p999_ns": 792,
+        "max_ns": 1375,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10551296,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "185538a90c85c13a317e8db85ae97fbda717f5d652d3427e92b01db7b18fb103",
+        "runs.csv": "a75ff1bdf7c9d2280a3a695f1f8c54e5c37faa4165a4d013f889b88a22fc4781",
+        "samples.csv": "013d562600c4323b7f2f3220f5fde026212921d7fd6d9776447b04d64bcdfeb3"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 3,
+      "policy": "small-events",
+      "bundle": "large-partial-3-small-events",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 20463875,
+        "throughput_ops_s": 4886660.028953461,
+        "accepted_ops_s": 4886660.028953461,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 875,
+        "p99_ns": 917,
+        "p999_ns": 1000,
+        "max_ns": 15375,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10616832,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "b099f23b971f941f1ae49822ccdb7ff88ea602b9975328b9bd96466e255d1ee3",
+        "runs.csv": "a40b4f3a572df1f0798e0f1e5183a6da58be16fa4b408db2041527531db97684",
+        "samples.csv": "a8ada438c0fb8c00cda805ce4ff9e63bf69e8aa7c4a169d628a9cfed1f581f4a"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 3,
+      "policy": "flat-prices",
+      "bundle": "large-partial-3-flat-prices",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 19714875,
+        "throughput_ops_s": 5072312.150089717,
+        "accepted_ops_s": 5072312.150089717,
+        "samples": 100000,
+        "min_ns": 41,
+        "p50_ns": 167,
+        "p95_ns": 750,
+        "p99_ns": 833,
+        "p999_ns": 875,
+        "max_ns": 14500,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10633216,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "89c1faf7427c33a6596ed3405162ef230de2e1f643f785c3302f07385b7dae41",
+        "runs.csv": "e60bd8fa415226a182591e29483e7c5ea362b9c8020092394fa3c0fc81e797a8",
+        "samples.csv": "dfb64af25ffb6ee5eb74654b3993bb623b5eac9bbf3aff77a0c47bd9cda339f6"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 3,
+      "policy": "direct-flat",
+      "bundle": "large-partial-3-direct-flat",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 9922458,
+        "throughput_ops_s": 10078147.975027962,
+        "accepted_ops_s": 10078147.975027962,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 42,
+        "p95_ns": 625,
+        "p99_ns": 708,
+        "p999_ns": 750,
+        "max_ns": 13208,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10616832,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "ab10b5cdcc19ab3ab3e475317ddf1902465a9a30656abcc7e8e28d9388f26345",
+        "runs.csv": "728fba056e2f68b70c7f84eca66a8f4a651c4626a446f9bf3d97f9cb11f57170",
+        "samples.csv": "951ac68322b183021aa621c354a36f0ff6e2bf600e095a18e61e18231efa2494"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 4,
+      "policy": "small-events",
+      "bundle": "large-partial-4-small-events",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 20937000,
+        "throughput_ops_s": 4776233.4622916365,
+        "accepted_ops_s": 4776233.4622916365,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 875,
+        "p99_ns": 917,
+        "p999_ns": 1000,
+        "max_ns": 13084,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10649600,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "33ca6158531ed00f11a7361affff09b3aff88e523936428e20ee3635775f4037",
+        "runs.csv": "f8ceec09f5204de9835ecba8104cdb8215c2ce5970b8a15c9fd657c8024404e9",
+        "samples.csv": "2210bba4216b40cd6df9374286870f05ba98dc2fb605fa995340a806178038d9"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 4,
+      "policy": "baseline",
+      "bundle": "large-partial-4-baseline",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 20027375,
+        "throughput_ops_s": 4993165.6045787325,
+        "accepted_ops_s": 4993165.6045787325,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 750,
+        "p99_ns": 833,
+        "p999_ns": 875,
+        "max_ns": 2333,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10567680,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "e81e68ce4f42be846324ff866ccc42b10e7e93c1e51eea3587c1d975a4edeb0a",
+        "runs.csv": "77717d89853e70756d05945130aa3f668a7589bf80ed991c4ebb295ed3cf0011",
+        "samples.csv": "73365027ac33c3c4d933d46186ef8c95c214f66db723bd74d115170ff54e768d"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 4,
+      "policy": "flat-prices",
+      "bundle": "large-partial-4-flat-prices",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 19921417,
+        "throughput_ops_s": 5019723.245590411,
+        "accepted_ops_s": 5019723.245590411,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 750,
+        "p99_ns": 792,
+        "p999_ns": 875,
+        "max_ns": 15000,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10665984,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "65fe0e6373708a83ae89ac9f2a5ef8a1eedc7083fde274955fc11f8435d29090",
+        "runs.csv": "333cd68a1262cb43800b9ff6e4280626728a66f52258e20b21b339c58b21993d",
+        "samples.csv": "b5f5a2a7a4a5de30004fcbbae3ad5d9bd7e53928c48d17424b4cb0d6d58d667f"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 4,
+      "policy": "direct-risk",
+      "bundle": "large-partial-4-direct-risk",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 10444791,
+        "throughput_ops_s": 9574150.406647677,
+        "accepted_ops_s": 9574150.406647677,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 42,
+        "p95_ns": 625,
+        "p99_ns": 708,
+        "p999_ns": 750,
+        "max_ns": 4042,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10600448,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "85537b29abdce95d2d41584fecc62ef8f76062b66d6cc537552bb57f8d29bee6",
+        "runs.csv": "ccae42969669cedc031b1485a1a3a1e3b2e6d87f97d5b166016a3d42dae616cf",
+        "samples.csv": "f9fe2aa7f240c92c68e949b3c48f231bc251a0823b157c2ba0c6057e9b3a78b1"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 4,
+      "policy": "direct-flat",
+      "bundle": "large-partial-4-direct-flat",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 9872500,
+        "throughput_ops_s": 10129146.619397316,
+        "accepted_ops_s": 10129146.619397316,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 42,
+        "p95_ns": 625,
+        "p99_ns": 667,
+        "p999_ns": 750,
+        "max_ns": 14042,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10584064,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "9f80816048e20389979254f6d640890575913c5db7a2ac431c93f6d4ca812f01",
+        "runs.csv": "01329707603e5e6dec55e16e7ae20ae7efc085574822bb0da70c4cc672042bc8",
+        "samples.csv": "6c56feb9b81a49025f59a73e585bb3e945150008e9f795ab3b70d788ed0ad17a"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 5,
+      "policy": "flat-prices",
+      "bundle": "large-partial-5-flat-prices",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 20369583,
+        "throughput_ops_s": 4909280.666177604,
+        "accepted_ops_s": 4909280.666177604,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 750,
+        "p99_ns": 833,
+        "p999_ns": 875,
+        "max_ns": 15083,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10649600,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "46238b8f28460e2e1dbabffb528eeaee73f667e904cb43139674c6333c3ae815",
+        "runs.csv": "920cd269ecf64fa39cc0d1818ee181f02bc82675315c318761f61a5613acfc69",
+        "samples.csv": "0c70c118cbe7bd89d88b8cb38a131be36a5f31e26531906ec7b7343854cd418b"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 5,
+      "policy": "direct-flat",
+      "bundle": "large-partial-5-direct-flat",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "flat",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 10197000,
+        "throughput_ops_s": 9806805.923310777,
+        "accepted_ops_s": 9806805.923310777,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 42,
+        "p95_ns": 625,
+        "p99_ns": 667,
+        "p999_ns": 750,
+        "max_ns": 14625,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10616832,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "5c70076ca4a06dc93ee2d5160d9ccd5656d7cb8bab9a980c0683687c89b82e97",
+        "runs.csv": "b38f460f8abfc22018ba3e1cfab4c905df6078403743e793397f136de6cfd82f",
+        "samples.csv": "f04b0e10979275a9c7ef388d66f1d398562b3be180fb7d2f0629240c9dae6266"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 5,
+      "policy": "small-events",
+      "bundle": "large-partial-5-small-events",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "small"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 20620458,
+        "throughput_ops_s": 4849552.808186899,
+        "accepted_ops_s": 4849552.808186899,
+        "samples": 100000,
+        "min_ns": 41,
+        "p50_ns": 167,
+        "p95_ns": 875,
+        "p99_ns": 917,
+        "p999_ns": 959,
+        "max_ns": 13500,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10649600,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "8e8d864d4957fa2b6c2697bf186ab014635eef9005424088e5c765081162c240",
+        "runs.csv": "3b05adf8b15e26ae13b5405c3a7f9976770b9c7ffa61a71e34239cba62a62168",
+        "samples.csv": "8b7f1b2fd9ef19f25bdb6378f44556a691fe7fec2c00397981c31ecf83fbaa79"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 5,
+      "policy": "direct-risk",
+      "bundle": "large-partial-5-direct-risk",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "direct",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 10186958,
+        "throughput_ops_s": 9816473.180708118,
+        "accepted_ops_s": 9816473.180708118,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 42,
+        "p95_ns": 625,
+        "p99_ns": 750,
+        "p999_ns": 1583,
+        "max_ns": 17417,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10616832,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "32bf3e9d3dfacecdd2a73a17c59dabeefa669b5b600b704e5fbad0db09799eb0",
+        "runs.csv": "b929c4bd7cae260cfda9b4529c937633af6aab4002f9947739a22e860b8faac9",
+        "samples.csv": "934d6f56025040fe332ae404cd32bcbbfe50bdfc1a5230aaeadaa80ae266afaa"
+      }
+    },
+    {
+      "profile": "large-partial",
+      "block": 5,
+      "policy": "baseline",
+      "bundle": "large-partial-5-baseline",
+      "workload_hash": "7478508931322940882",
+      "engine": {
+        "price_index": "tree",
+        "risk_traversal": "snapshot",
+        "event_reservation": "worst-case"
+      },
+      "run": {
+        "repetition": 1,
+        "commands": 100000,
+        "rejects": 0,
+        "trades": 94112,
+        "events": 482336,
+        "elapsed_ns": 19895625,
+        "throughput_ops_s": 5026230.641158546,
+        "accepted_ops_s": 5026230.641158546,
+        "samples": 100000,
+        "min_ns": 0,
+        "p50_ns": 167,
+        "p95_ns": 750,
+        "p99_ns": 833,
+        "p999_ns": 875,
+        "max_ns": 6208,
+        "event_hash": "14773555847551480782",
+        "book_hashes": [
+          "14976390440181546935"
+        ]
+      },
+      "process_peak_rss_bytes": 10600448,
+      "files_sha256": {
+        "input.workload": "722084864250f3bfd731fe1378d82455b909260655d1efc115cb9e4ed1433afd",
+        "results.json": "b8efb587e7f25d6994beb402174fec640b1543f8698266c6f0f9aee7fd4c64c2",
+        "runs.csv": "bac9f0ea7caca6f6d039b6caa063402eaadf938262f411ad06774c7995c2320c",
+        "samples.csv": "53c906bff3d9ff4feb9f015c185bdf5e145a142f0c4683903046a7bf0706f56c"
+      }
+    }
+  ],
+  "limitations": [
+    "Uncontrolled macOS scheduling/affinity",
+    "Five paired blocks, not independent market samples",
+    "No confidence interval or statistical-significance claim",
+    "Seeded synthetic inputs, not real market data",
+    "Historical measured source is distinct from the current application version"
+  ]
+}

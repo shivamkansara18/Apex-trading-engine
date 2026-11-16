@@ -1,0 +1,12 @@
+#pragma once
+
+namespace apex::build_info {
+inline constexpr auto build_type = R"apex(@CMAKE_BUILD_TYPE@)apex";
+inline constexpr auto compiler = R"apex(@CMAKE_CXX_COMPILER_ID@ @CMAKE_CXX_COMPILER_VERSION@)apex";
+inline constexpr auto compiler_path = R"apex(@CMAKE_CXX_COMPILER@)apex";
+inline constexpr auto flags = R"apex(@APEX_RECORDED_FLAGS@)apex";
+inline constexpr auto git_commit = R"apex(@APEX_GIT_COMMIT@)apex";
+inline constexpr bool git_dirty = @APEX_GIT_DIRTY@;
+inline constexpr auto source_sha256 = R"apex(@APEX_SOURCE_SHA256@)apex";
+inline constexpr bool sanitized = @APEX_SANITIZED@;
+} // namespace apex::build_info
